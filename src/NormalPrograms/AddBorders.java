@@ -29,6 +29,9 @@ public class AddBorders {
 		String[] p = { "a" };
 		for (String i : addBorder(p)) {
 			System.out.println(i);
+			//System.out.println();
+			//System.out.println();
+			//System.out.println();
 			
 		}
 	}
