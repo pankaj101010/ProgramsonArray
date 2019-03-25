@@ -3,19 +3,16 @@ package NormalPrograms;
 public class MaxMultiple {
 
 	public static int maxMultiple(int divisor, int bound) {
-		int count = 1;
-		while (divisor > 0) {
-			int N = divisor * count;
-			if (N % divisor == 0 && N <= bound && N > 0) {
-				return N;
-			} else {
-				count++;
+		for (int i = bound; i >= 0; i--) {
+			if(i%divisor==0)
+			{
+				return i;
 			}
 		}
 		return 0;
 	}
 
 	public static void main(String[] args) {
-
+		System.out.println(maxMultiple(3, 10));
 	}
 }
