@@ -74,9 +74,8 @@ public class DigitDifferenceSort {
 		return finres;
 	}
 
-	public static void main(String[] args) {
-		int[] a = { 714, 13, 804, 419, 97, 850, 440, 215, 836, 408, 743, 131, 364, 846, 80, 403, 720, 618, 118, 892,
-				711, 682, 427, 949, 624 };
+	public static void main(String[] args) throws IndexOutOfBoundsException {
+		int[] a = {8, 76, 7, 26, 7, 60, 87, 77, 72, 61, 13, 60, 8, 32, 48, 63, 82, 56, 17, 18, 28, 85, 95, 69, 954};
 		for (int i : finddigitDifferenceandSort(a)) {
 			System.out.print(i + " ");
 		}
