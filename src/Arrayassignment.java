@@ -13,6 +13,8 @@ public class Arrayassignment {
 			for (int j = 0; j < names[i].length; j++) {
 				if (i + 1 < names.length) {
 					System.out.println(names[i][j] + " " + names[i + 1][j]);
+
+
 				}
 			}
 		}
