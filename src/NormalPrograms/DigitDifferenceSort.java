@@ -5,18 +5,29 @@ import java.util.Collections;
 
 public class DigitDifferenceSort {
 //	For index wise sorting in descending order
-	public static int[] sortingnumberindexwise(int[] a, int[] index) {
+	public static int[] sortingnumberindexwise(int[] a, ArrayList<Integer> index) {
 		int k = 0;
-		int[] res = new int[index.length];
+		int[] res = new int[index.size()];
+		int[] finalres = new int[index.size()];
 		for (int i = a.length - 1; i >= 0; i--) {
-			for (int j = 0; j < index.length; j++) {
-				if (a[i] == index[j]) {
-					res[k] = a[i];
+			for (int j = 0; j < index.size(); j++) {
+				if (a[i] == (int) index.get(j)) {
+					res[k] = i;
+					index.remove(j);
 					k++;
+					break;
 				}
 			}
 		}
-		return res;
+		int g = 0;
+		k = 0;
+		for (int i = 0; i < res.length; i++) {
+			finalres[g] = a[res[k]];
+			g++;
+			k++;
+		}
+
+		return finalres;
 	}
 
 	public static int[] finddigitDifferenceandSort(int[] p) {
@@ -47,14 +58,13 @@ public class DigitDifferenceSort {
 		}
 		for (int i = 0; i < B.size(); i++) {
 			if (B.get(i).size() > 1) {
-				int[] c = new int[B.get(i).size()];
-				for (int k = 0; k < c.length; k++) {
-					c[k] = B.get(i).get(k);
+				ArrayList<Integer> C = new ArrayList<Integer>();
+				for (int k = 0; k < B.get(i).size(); k++) {
+					C.add(B.get(i).get(k));
 				}
-				int temp2 = B.get(i).size();
 				B.get(i).clear();
-				for (int j = 0; j < temp2; j++) {
-					B.get(i).add(sortingnumberindexwise(finres, c)[j]);
+				for (int j : sortingnumberindexwise(finres, C)) {
+					B.get(i).add(j);
 				}
 			} else {
 				continue;
@@ -75,7 +85,7 @@ public class DigitDifferenceSort {
 	}
 
 	public static void main(String[] args) {
-		int[] a = { 8, 76, 7, 26, 7, 60, 87, 77, 72, 61, 13, 60, 8, 32, 48, 63, 82, 56, 17, 18, 28, 85, 95, 69, 954 };
+		int[] a = {152, 23, 7, 887, 243};
 		for (int i : finddigitDifferenceandSort(a)) {
 			System.out.print(i + " ");
 		}
