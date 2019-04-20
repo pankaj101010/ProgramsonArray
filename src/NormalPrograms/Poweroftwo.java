@@ -6,41 +6,11 @@ public class Poweroftwo {
 		int sum = 0;
 		int count = 0;
 		int c = 0;
-		if (n % 2 == 0) {
-			for (int i = 1; i < n; i++) {
-				sum += (int) Math.pow(2, i);
-				count++;
-				if (sum == n) {
-					int[] k = new int[count];
-					int p = 1;
-					for (int z = 0; z < k.length; z++) {
-						k[z] = (int) Math.pow(2, p);
-						p++;
-					}
-					return k;
-				} else if (sum > n) {
-					int[] k = new int[1];
-					k[0] = n;
-					return k;
-				}
-			}
-		} else {
-			for (int i = 0; i < n; i++) {
-				sum += (int) Math.pow(2, i);
-				c++;
-				if (sum == n) {
-					int[] k = new int[c];
-					int p = 0;
-					for (int z = 0; z < k.length; z++) {
-						k[z] = (int) Math.pow(2, p);
-						p++;
-					}
-					return k;
-				} else if (sum > n) {
-					int[] k = new int[1];
-					k[0] = n;
-					return k;
-				}
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				sum += (int) Math.pow(2, i) + (int) Math.pow(2, j);
+				if (sum > n)
+					break;
 			}
 		}
 		return null;
