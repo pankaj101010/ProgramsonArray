@@ -1,6 +1,8 @@
 
 public class Ascending {
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	// comment added
+	{
 		int[] arr = { 10, 9, 8, 6, 3, 11, 11, 11, 1, 1, 9, 8, 7 };
 		int temp = 0;
 		for (int i = 0; i < arr.length - 1; i++) {
